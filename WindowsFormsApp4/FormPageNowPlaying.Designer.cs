@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp4
 {
-    partial class FormPageHum
+    partial class FormPageNowPlaying
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,7 @@
             this.Judol = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,28 +52,26 @@
             this.labelHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.labelHome.Location = new System.Drawing.Point(266, 22);
             this.labelHome.Name = "labelHome";
-            this.labelHome.Size = new System.Drawing.Size(68, 28);
+            this.labelHome.Size = new System.Drawing.Size(132, 28);
             this.labelHome.TabIndex = 1;
-            this.labelHome.Text = "Home";
+            this.labelHome.Text = "Now Playing";
             // 
             // btnHome
             // 
-            this.btnHome.Animated = true;
             this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.IndicateFocus = true;
             this.btnHome.Location = new System.Drawing.Point(12, 96);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(199, 32);
             this.btnHome.TabIndex = 2;
             this.btnHome.Text = "Home";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHome.Click += new System.EventHandler(this.btnPinned_Click);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnPinnedMovies
             // 
@@ -82,7 +81,7 @@
             this.btnPinnedMovies.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPinnedMovies.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPinnedMovies.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPinnedMovies.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPinnedMovies.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btnPinnedMovies.ForeColor = System.Drawing.Color.White;
             this.btnPinnedMovies.IndicateFocus = true;
             this.btnPinnedMovies.Location = new System.Drawing.Point(12, 145);
@@ -151,6 +150,7 @@
             this.Judol.Size = new System.Drawing.Size(43, 18);
             this.Judol.TabIndex = 2;
             this.Judol.Text = "Judul";
+            this.Judol.Click += new System.EventHandler(this.Judol_Click);
             // 
             // pictureBox1
             // 
@@ -169,19 +169,30 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // FormPageHum
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(492, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "You haven\'t watched video yet.";
+            // 
+            // FormPageNowPlaying
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(1021, 450);
+            this.ClientSize = new System.Drawing.Size(1014, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelHome);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FormPageHum";
+            this.Name = "FormPageNowPlaying";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPageHum";
-            this.Load += new System.EventHandler(this.FormPageHum_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -202,6 +213,7 @@
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Label Judol;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp4
 {
-    public partial class FormPageHum : Form
+    public partial class FormPageNowPlaying : Form
     {
-        public FormPageHum()
+        public FormPageNowPlaying()
         {
             InitializeComponent();
         }
@@ -25,17 +25,19 @@ namespace WindowsFormsApp4
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnPinned_Click(object sender, EventArgs e)
-        {
             // Membuat instance dari form Playlist
             FormPageHum HumPageForm = new FormPageHum();
             // Menampilkan form Playlist
             HumPageForm.Show();
             // Menyembunyikan form saat ini (opsional)
             this.Close();
+
+        }
+
+        private void btnPinned_Click(object sender, EventArgs e)
+        {
+           
+
         }
 
         private void btnPlayQueue_Click(object sender, EventArgs e)
@@ -53,6 +55,11 @@ namespace WindowsFormsApp4
 
         }
 
+        private void Judol_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             // Membuat instance dari form Playlist
@@ -61,11 +68,6 @@ namespace WindowsFormsApp4
             playlistForm.Show();
             // Menyembunyikan form saat ini (opsional)
             this.Close();
-        }
-
-        private void FormPageHum_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSettings_Click(object sender, EventArgs e)

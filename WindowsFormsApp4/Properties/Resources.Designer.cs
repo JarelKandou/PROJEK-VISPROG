@@ -63,6 +63,26 @@ namespace WindowsFormsApp4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aduh_gantengnya {
+            get {
+                object obj = ResourceManager.GetObject("aduh gantengnya", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download__6_ {
+            get {
+                object obj = ResourceManager.GetObject("download (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eec071442e9a1b8e017c5a7c1853b880_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("eec071442e9a1b8e017c5a7c1853b880-removebg-preview", resourceCulture);
@@ -96,6 +116,26 @@ namespace WindowsFormsApp4.Properties {
         internal static System.Drawing.Bitmap Poster_21 {
             get {
                 object obj = ResourceManager.GetObject("Poster 21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_03_03_103146 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-03-03 103146", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2025_03_29_at_21_22_12_736fadfa_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp_Image_2025-03-29_at_21.22.12_736fadfa-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
