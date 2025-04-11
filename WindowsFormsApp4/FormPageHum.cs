@@ -69,7 +69,7 @@ namespace WindowsFormsApp4
 
         private void FormPageHum_Load(object sender, EventArgs e)
         {
-
+            axWindowsMediaPlayer1.Visible = false; // Sembunyikan saat awal
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -99,59 +99,12 @@ namespace WindowsFormsApp4
                 {
                     string[] selectedFiles = openFileDialog.FileNames;
 
-                    // Bersihkan panel dulu
                     flowLayoutPanel1.Controls.Clear();
 
                     foreach (string file in selectedFiles)
                     {
-                        Image thumbnail = GetVideoThumbnail(file);
-
-                        PictureBox thumb = new PictureBox
-                        {
-                            Size = new Size(120, 90),
-                            SizeMode = PictureBoxSizeMode.StretchImage,
-                            Image = thumbnail,
-                            BackColor = Color.Black,
-                            Cursor = Cursors.Hand, // Biar kelihatan bisa di-klik
-                            Tag = file // Simpan path video di Tag
-                        };
-
-                        // Tambahkan event klik
-                        thumb.Click += (s, args) =>
-                        {
-                            string videoFilePath = ((PictureBox)s).Tag.ToString();
-                            try
-                            {
-                                Process.Start(new ProcessStartInfo
-                                {
-                                    FileName = videoFilePath,
-                                    UseShellExecute = true // Wajib untuk buka file dengan media player
-                                });
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Gagal membuka video: " + ex.Message);
-                            }
-                        };
-
-                        Label label = new Label
-                        {
-                            Text = Path.GetFileName(file),
-                            Width = 120,
-                            TextAlign = ContentAlignment.MiddleCenter
-                        };
-
-                        Panel itemPanel = new Panel
-                        {
-                            Size = new Size(120, 130)
-                        };
-
-                        label.Top = thumb.Bottom + 2;
-
-                        itemPanel.Controls.Add(thumb);
-                        itemPanel.Controls.Add(label);
-
-                        flowLayoutPanel1.Controls.Add(itemPanel);
+                        Panel item = CreateVideoItem(file);
+                        flowLayoutPanel1.Controls.Add(item);
                     }
                 }
             }
@@ -169,6 +122,7 @@ namespace WindowsFormsApp4
                 UseShellExecute = false,
                 CreateNoWindow = true,
                 RedirectStandardError = true // hanya error saja cukup
+
             };
 
             try
@@ -199,7 +153,56 @@ namespace WindowsFormsApp4
             return null;
         }
 
+        private Panel CreateVideoItem(string file)
+        {
+            Image thumbnail = GetVideoThumbnail(file);
 
+            PictureBox thumb = new PictureBox
+            {
+                Size = new Size(120, 90),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Image = thumbnail,
+                BackColor = Color.Black,
+                Cursor = Cursors.Hand,
+                Tag = file
+            };
+
+            thumb.Click += (s, args) =>
+            {
+                string videoFilePath = ((PictureBox)s).Tag.ToString();
+                try
+                {
+                    axWindowsMediaPlayer1.URL = videoFilePath;
+                    axWindowsMediaPlayer1.Ctlcontrols.play();
+                    axWindowsMediaPlayer1.Visible = true; // Munculkan saat klik
+                    axWindowsMediaPlayer1.BringToFront();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gagal memutar video: " + ex.Message);
+                }
+            };
+
+
+            Label label = new Label
+            {
+                Text = Path.GetFileName(file),
+                Width = 120,
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+
+            Panel panel = new Panel
+            {
+                Size = new Size(120, 130)
+            };
+
+            label.Top = thumb.Bottom + 2;
+
+            panel.Controls.Add(thumb);
+            panel.Controls.Add(label);
+
+            return panel;
+        }
 
     }
 }

@@ -204,10 +204,9 @@
             this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox3);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox4);
-            this.flowLayoutPanel1.Controls.Add(this.axWindowsMediaPlayer1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(358, 85);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(578, 319);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(111, 319);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // pictureBox2
@@ -223,7 +222,7 @@
             // pictureBox3
             // 
             this.pictureBox3.ErrorImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(111, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 113);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(102, 104);
             this.pictureBox3.TabIndex = 1;
@@ -232,7 +231,7 @@
             // pictureBox4
             // 
             this.pictureBox4.ErrorImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(219, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(3, 223);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(102, 104);
             this.pictureBox4.TabIndex = 2;
@@ -241,11 +240,11 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 113);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(230, 88);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(500, 206);
-            this.axWindowsMediaPlayer1.TabIndex = 3;
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(461, 221);
+            this.axWindowsMediaPlayer1.TabIndex = 6;
             // 
             // FormPageHum
             // 
@@ -253,6 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1021, 450);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.labelHome);
