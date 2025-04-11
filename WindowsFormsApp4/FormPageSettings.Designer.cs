@@ -41,9 +41,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLightMode = new System.Windows.Forms.RadioButton();
-            this.btnDarkMode = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnDarkMode = new System.Windows.Forms.RadioButton();
+            this.btnLightMode = new System.Windows.Forms.RadioButton();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -183,17 +183,14 @@
             this.label1.Size = new System.Drawing.Size(0, 23);
             this.label1.TabIndex = 3;
             // 
-            // btnLightMode
+            // label2
             // 
-            this.btnLightMode.AutoSize = true;
-            this.btnLightMode.Location = new System.Drawing.Point(265, 108);
-            this.btnLightMode.Name = "btnLightMode";
-            this.btnLightMode.Size = new System.Drawing.Size(94, 20);
-            this.btnLightMode.TabIndex = 4;
-            this.btnLightMode.TabStop = true;
-            this.btnLightMode.Text = "Light Mode";
-            this.btnLightMode.UseVisualStyleBackColor = true;
-            this.btnLightMode.CheckedChanged += new System.EventHandler(this.btnLightMode_CheckedChanged);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(268, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Select Theme";
             // 
             // btnDarkMode
             // 
@@ -205,15 +202,19 @@
             this.btnDarkMode.TabStop = true;
             this.btnDarkMode.Text = "Dark Mode";
             this.btnDarkMode.UseVisualStyleBackColor = true;
+            this.btnDarkMode.CheckedChanged += new System.EventHandler(this.btnDarkMode_CheckedChanged_1);
             // 
-            // label2
+            // btnLightMode
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(268, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Select Theme";
+            this.btnLightMode.AutoSize = true;
+            this.btnLightMode.Location = new System.Drawing.Point(265, 108);
+            this.btnLightMode.Name = "btnLightMode";
+            this.btnLightMode.Size = new System.Drawing.Size(94, 20);
+            this.btnLightMode.TabIndex = 4;
+            this.btnLightMode.TabStop = true;
+            this.btnLightMode.Text = "Light Mode";
+            this.btnLightMode.UseVisualStyleBackColor = true;
+            this.btnLightMode.CheckedChanged += new System.EventHandler(this.btnLightMode_CheckedChanged);
             // 
             // FormPageSettings
             // 

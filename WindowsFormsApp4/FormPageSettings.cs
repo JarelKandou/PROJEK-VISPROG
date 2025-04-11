@@ -105,19 +105,7 @@ namespace WindowsFormsApp4
         }
 
         private void FormPageSettings_Load(object sender, EventArgs e)
-        {
-            // Load saved theme preference
-            isDarkMode = Properties.Settings.Default.DarkMode;
-            if (isDarkMode)
-            {
-                ToggleDarkMode(); // Apply dark mode if enabled
-                btnDarkMode.Checked = true;
-            }
-            else
-            {
-                btnLightMode.Checked = true;
-            }
-        }
+        { }
 
         private void panelSidebar_Paint(object sender, PaintEventArgs e)
         {
@@ -144,6 +132,11 @@ namespace WindowsFormsApp4
             {
                 ToggleDarkMode(); // Switch to light mode
             }
+        }
+
+        private void btnDarkMode_CheckedChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
