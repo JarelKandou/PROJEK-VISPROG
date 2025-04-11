@@ -79,5 +79,10 @@ namespace WindowsFormsApp4
             // Menyembunyikan form saat ini (opsional)
             this.Close();
         }
+
+        private void labelHome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

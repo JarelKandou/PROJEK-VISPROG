@@ -21,13 +21,6 @@ namespace WindowsFormsApp4
 
         public FormPageSettings()
         {
-            InitializeComponent();
-            this.btnLightMode = new System.Windows.Forms.RadioButton();
-            this.btnDarkMode = new System.Windows.Forms.RadioButton();
-
-            // Configure them
-            this.btnLightMode.Text = "Light Mode";
-            this.btnDarkMode.Text = "Dark Mode";
         }
 
 
@@ -106,17 +99,7 @@ namespace WindowsFormsApp4
 
         private void FormPageSettings_Load(object sender, EventArgs e)
         {
-            // Load saved theme preference
-            isDarkMode = Properties.Settings.Default.DarkMode;
-            if (isDarkMode)
-            {
-                ToggleDarkMode(); // Apply dark mode if enabled
-                btnDarkMode.Checked = true;
-            }
-            else
-            {
-                btnLightMode.Checked = true;
-            }
+         
         }
 
         private void panelSidebar_Paint(object sender, PaintEventArgs e)
@@ -127,23 +110,6 @@ namespace WindowsFormsApp4
         private void btnSettings_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnLightMode_CheckedChanged(object sender, EventArgs e)
-        {
-            if (btnLightMode.Checked && !isDarkMode)
-            {
-                ToggleDarkMode(); // Switch to dark mode
-            }
-        }
-
-        // Add this new method for dark mode toggle
-        private void btnDarkMode_CheckedChanged(object sender, EventArgs e)
-        {
-            if (btnDarkMode.Checked && isDarkMode)
-            {
-                ToggleDarkMode(); // Switch to light mode
-            }
         }
     }
 }
