@@ -38,13 +38,10 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.Judol = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.btnOpenFiles = new Guna.UI2.WinForms.Guna2Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelHome
@@ -57,7 +54,6 @@
             this.labelHome.Size = new System.Drawing.Size(68, 28);
             this.labelHome.TabIndex = 1;
             this.labelHome.Text = "Home";
-            this.labelHome.Click += new System.EventHandler(this.labelHome_Click);
             // 
             // btnHome
             // 
@@ -136,6 +132,7 @@
             this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelSidebar.Controls.Add(this.Judol);
             this.panelSidebar.Controls.Add(this.guna2Button1);
+            this.panelSidebar.Controls.Add(this.pictureBox1);
             this.panelSidebar.Controls.Add(this.btnSettings);
             this.panelSidebar.Controls.Add(this.btnPinnedMovies);
             this.panelSidebar.Controls.Add(this.btnHome);
@@ -155,54 +152,22 @@
             this.Judol.TabIndex = 2;
             this.Judol.Text = "Judul";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp4.Properties.Resources.eec071442e9a1b8e017c5a7c1853b880_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(193, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // guna2BorderlessForm1
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
-            // btnOpenFiles
-            // 
-            this.btnOpenFiles.Animated = true;
-            this.btnOpenFiles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnOpenFiles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnOpenFiles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnOpenFiles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOpenFiles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnOpenFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnOpenFiles.ForeColor = System.Drawing.Color.White;
-            this.btnOpenFiles.IndicateFocus = true;
-            this.btnOpenFiles.Location = new System.Drawing.Point(356, 326);
-            this.btnOpenFiles.Name = "btnOpenFiles";
-            this.btnOpenFiles.Size = new System.Drawing.Size(155, 32);
-            this.btnOpenFiles.TabIndex = 6;
-            this.btnOpenFiles.Text = "Open File(s)";
-            this.btnOpenFiles.Click += new System.EventHandler(this.btnOpenFiles_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(315, 84);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(281, 176);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(338, 96);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 9;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(338, 202);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // FormPageHum
             // 
@@ -210,20 +175,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1021, 450);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btnOpenFiles);
             this.Controls.Add(this.labelHome);
             this.Controls.Add(this.panelSidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormPageHum";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPageHum";
             this.Load += new System.EventHandler(this.FormPageHum_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,14 +197,11 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnPinnedMovies;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Label Judol;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2Button btnOpenFiles;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

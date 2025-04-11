@@ -38,9 +38,11 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.Judol = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelHome
@@ -128,6 +130,7 @@
             this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelSidebar.Controls.Add(this.Judol);
             this.panelSidebar.Controls.Add(this.guna2Button1);
+            this.panelSidebar.Controls.Add(this.pictureBox1);
             this.panelSidebar.Controls.Add(this.btnSettings);
             this.panelSidebar.Controls.Add(this.btnPinnedMovies);
             this.panelSidebar.Controls.Add(this.btnHome);
@@ -146,6 +149,17 @@
             this.Judol.Size = new System.Drawing.Size(43, 18);
             this.Judol.TabIndex = 2;
             this.Judol.Text = "Judul";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp4.Properties.Resources.eec071442e9a1b8e017c5a7c1853b880_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(193, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // guna2BorderlessForm1
             // 
@@ -179,6 +193,7 @@
             this.Text = "FormPagePlaylist";
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,6 +206,7 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnPinnedMovies;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Label Judol;

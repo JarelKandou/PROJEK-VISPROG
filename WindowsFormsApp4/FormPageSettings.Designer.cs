@@ -38,12 +38,14 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.Judol = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTheme = new Guna.UI2.WinForms.Guna2Button();
-            this.btn = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnLightMode = new System.Windows.Forms.RadioButton();
+            this.btnDarkMode = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelHome
@@ -133,6 +135,7 @@
             this.panelSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelSidebar.Controls.Add(this.Judol);
             this.panelSidebar.Controls.Add(this.guna2Button1);
+            this.panelSidebar.Controls.Add(this.pictureBox1);
             this.panelSidebar.Controls.Add(this.btnSettings);
             this.panelSidebar.Controls.Add(this.btnPinnedMovies);
             this.panelSidebar.Controls.Add(this.btnHome);
@@ -153,83 +156,64 @@
             this.Judol.TabIndex = 2;
             this.Judol.Text = "Judul";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp4.Properties.Resources.eec071442e9a1b8e017c5a7c1853b880_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(193, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 16);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // guna2BorderlessForm1
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // btnProfile
+            // label1
             // 
-            this.btnProfile.Animated = true;
-            this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProfile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.IndicateFocus = true;
-            this.btnProfile.Location = new System.Drawing.Point(291, 76);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(653, 35);
-            this.btnProfile.TabIndex = 5;
-            this.btnProfile.Text = "            Profile";
-            this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(422, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 23);
+            this.label1.TabIndex = 3;
             // 
-            // btnTheme
+            // btnLightMode
             // 
-            this.btnTheme.Animated = true;
-            this.btnTheme.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTheme.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTheme.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTheme.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTheme.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnTheme.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTheme.ForeColor = System.Drawing.Color.White;
-            this.btnTheme.IndicateFocus = true;
-            this.btnTheme.Location = new System.Drawing.Point(291, 142);
-            this.btnTheme.Name = "btnTheme";
-            this.btnTheme.Size = new System.Drawing.Size(653, 35);
-            this.btnTheme.TabIndex = 6;
-            this.btnTheme.Text = "            Theme";
-            this.btnTheme.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLightMode.AutoSize = true;
+            this.btnLightMode.Location = new System.Drawing.Point(265, 108);
+            this.btnLightMode.Name = "btnLightMode";
+            this.btnLightMode.Size = new System.Drawing.Size(94, 20);
+            this.btnLightMode.TabIndex = 4;
+            this.btnLightMode.TabStop = true;
+            this.btnLightMode.Text = "Light Mode";
+            this.btnLightMode.UseVisualStyleBackColor = true;
+            this.btnLightMode.CheckedChanged += new System.EventHandler(this.btnLightMode_CheckedChanged);
             // 
-            // btn
+            // btnDarkMode
             // 
-            this.btn.Animated = true;
-            this.btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btn.ForeColor = System.Drawing.Color.White;
-            this.btn.IndicateFocus = true;
-            this.btn.Location = new System.Drawing.Point(291, 209);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(653, 35);
-            this.btn.TabIndex = 7;
-            this.btn.Text = "            Settings";
-            this.btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDarkMode.AutoSize = true;
+            this.btnDarkMode.Location = new System.Drawing.Point(383, 108);
+            this.btnDarkMode.Name = "btnDarkMode";
+            this.btnDarkMode.Size = new System.Drawing.Size(95, 20);
+            this.btnDarkMode.TabIndex = 5;
+            this.btnDarkMode.TabStop = true;
+            this.btnDarkMode.Text = "Dark Mode";
+            this.btnDarkMode.UseVisualStyleBackColor = true;
             // 
-            // btnLogout
+            // label2
             // 
-            this.btnLogout.Animated = true;
-            this.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogout.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.IndicateFocus = true;
-            this.btnLogout.Location = new System.Drawing.Point(291, 273);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(653, 35);
-            this.btnLogout.TabIndex = 8;
-            this.btnLogout.Text = "            Logout";
-            this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(268, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Select Theme";
             // 
             // FormPageSettings
             // 
@@ -237,10 +221,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1021, 450);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btn);
-            this.Controls.Add(this.btnTheme);
-            this.Controls.Add(this.btnProfile);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnDarkMode);
+            this.Controls.Add(this.btnLightMode);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelHome);
             this.Controls.Add(this.panelSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -250,6 +234,7 @@
             this.Load += new System.EventHandler(this.FormPageSettings_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,14 +247,15 @@
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnPinnedMovies;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Label Judol;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2Button btnLogout;
-        private Guna.UI2.WinForms.Guna2Button btn;
-        private Guna.UI2.WinForms.Guna2Button btnTheme;
-        private Guna.UI2.WinForms.Guna2Button btnProfile;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton btnDarkMode;
+        private System.Windows.Forms.RadioButton btnLightMode;
     }
 }
 
