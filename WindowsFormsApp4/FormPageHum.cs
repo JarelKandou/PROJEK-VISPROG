@@ -104,16 +104,34 @@ namespace WindowsFormsApp4
 
                     foreach (string file in selectedFiles)
                     {
-                        // Ambil thumbnail
                         Image thumbnail = GetVideoThumbnail(file);
 
-                        // Buat UI item
                         PictureBox thumb = new PictureBox
                         {
                             Size = new Size(120, 90),
                             SizeMode = PictureBoxSizeMode.StretchImage,
                             Image = thumbnail,
-                            BackColor = Color.Black
+                            BackColor = Color.Black,
+                            Cursor = Cursors.Hand, // Biar kelihatan bisa di-klik
+                            Tag = file // Simpan path video di Tag
+                        };
+
+                        // Tambahkan event klik
+                        thumb.Click += (s, args) =>
+                        {
+                            string videoFilePath = ((PictureBox)s).Tag.ToString();
+                            try
+                            {
+                                Process.Start(new ProcessStartInfo
+                                {
+                                    FileName = videoFilePath,
+                                    UseShellExecute = true // Wajib untuk buka file dengan media player
+                                });
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Gagal membuka video: " + ex.Message);
+                            }
                         };
 
                         Label label = new Label
@@ -128,7 +146,6 @@ namespace WindowsFormsApp4
                             Size = new Size(120, 130)
                         };
 
-                        // Posisi label
                         label.Top = thumb.Bottom + 2;
 
                         itemPanel.Controls.Add(thumb);
@@ -142,30 +159,36 @@ namespace WindowsFormsApp4
 
         private Image GetVideoThumbnail(string videoPath)
         {
-            string ffmpegPath = @"C:\ffmpeg\bin\ffmpeg.exe"; // Ganti ke path ffmpeg kamu
+            string ffmpegPath = @"C:\ffmpeg-2025-03-31-git-35c091f4b7-full_build\ffmpeg-2025-03-31-git-35c091f4b7-full_build\bin\ffmpeg.exe";
             string thumbnailPath = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".jpg");
 
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
                 FileName = ffmpegPath,
-                Arguments = $"-i \"{videoPath}\" -ss 00:00:01 -vframes 1 -q:v 2 \"{thumbnailPath}\"",
+                Arguments = $"-ss 00:00:07 -i \"{videoPath}\" -frames:v 1 -q:v 2 \"{thumbnailPath}\"",
                 UseShellExecute = false,
                 CreateNoWindow = true,
-                RedirectStandardError = true,
-                RedirectStandardOutput = true
+                RedirectStandardError = true // hanya error saja cukup
             };
 
             try
             {
-                using (Process process = Process.Start(startInfo))
+                using (Process process = new Process())
                 {
+                    process.StartInfo = startInfo;
+                    process.Start();
+
+                    string error = process.StandardError.ReadToEnd(); // bisa di-log kalau mau
                     process.WaitForExit();
                 }
 
                 if (File.Exists(thumbnailPath))
                 {
-                    Image img = Image.FromFile(thumbnailPath);
-                    return img;
+                    using (var fs = new FileStream(thumbnailPath, FileMode.Open, FileAccess.Read))
+                    {
+                        Image img = Image.FromStream(fs);
+                        return (Image)img.Clone();
+                    }
                 }
             }
             catch (Exception ex)
@@ -175,5 +198,8 @@ namespace WindowsFormsApp4
 
             return null;
         }
+
+
+
     }
 }
