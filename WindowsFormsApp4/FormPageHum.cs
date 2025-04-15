@@ -19,6 +19,7 @@ namespace WindowsFormsApp4
         public FormPageHum()
         {
             InitializeComponent();
+            
         }
 
 
@@ -69,7 +70,7 @@ namespace WindowsFormsApp4
 
         private void FormPageHum_Load(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.Visible = false; // Sembunyikan saat awal
+            RenderOpenedVideos();
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -90,21 +91,28 @@ namespace WindowsFormsApp4
 
         private void btnOpenFile_Click_1(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
-                openFileDialog.Multiselect = true;
-                openFileDialog.Filter = "Video Files|*.mp4;*.avi;*.mkv;*.mov;*.wmv";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string[] selectedFiles = openFileDialog.FileNames;
+                    string selectedFolder = folderDialog.SelectedPath;
 
-                    flowLayoutPanel1.Controls.Clear();
+                    // Ambil semua file video di folder
+                    string[] videoFiles = Directory.GetFiles(selectedFolder, "*.*", SearchOption.TopDirectoryOnly)
+                                                   .Where(file => file.EndsWith(".mp4") || file.EndsWith(".avi") ||
+                                                                  file.EndsWith(".mkv") || file.EndsWith(".mov") ||
+                                                                  file.EndsWith(".wmv")).ToArray();
 
-                    foreach (string file in selectedFiles)
+                    flowLayoutPanel1.Controls.Clear(); // Bersihkan yang lama
+
+                    foreach (string file in videoFiles)
                     {
-                        Panel item = CreateVideoItem(file);
+                        Image thumbnail = GetVideoThumbnail(file); // pastikan thumbnail didapat di sini
+                        Panel item = CreateVideoItem(file, thumbnail);
                         flowLayoutPanel1.Controls.Add(item);
+
+                        // Tambahkan ke storage agar tidak hilang saat ganti form
+                        OpenedVideoStorage.Add(file, thumbnail);
                     }
                 }
             }
@@ -153,10 +161,8 @@ namespace WindowsFormsApp4
             return null;
         }
 
-        private Panel CreateVideoItem(string file)
+        private Panel CreateVideoItem(string file, Image thumbnail)
         {
-            Image thumbnail = GetVideoThumbnail(file);
-
             PictureBox thumb = new PictureBox
             {
                 Size = new Size(120, 90),
@@ -172,17 +178,14 @@ namespace WindowsFormsApp4
                 string videoFilePath = ((PictureBox)s).Tag.ToString();
                 try
                 {
-                    axWindowsMediaPlayer1.URL = videoFilePath;
-                    axWindowsMediaPlayer1.Ctlcontrols.play();
-                    axWindowsMediaPlayer1.Visible = true; // Munculkan saat klik
-                    axWindowsMediaPlayer1.BringToFront();
+                    FormPlayer playerForm = new FormPlayer(videoFilePath);
+                    playerForm.Show();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Gagal memutar video: " + ex.Message);
+                    MessageBox.Show("Gagal membuka player: " + ex.Message);
                 }
             };
-
 
             Label label = new Label
             {
@@ -197,12 +200,26 @@ namespace WindowsFormsApp4
             };
 
             label.Top = thumb.Bottom + 2;
-
             panel.Controls.Add(thumb);
             panel.Controls.Add(label);
 
             return panel;
         }
 
+        private void RenderOpenedVideos()
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            foreach (var video in OpenedVideoStorage.Videos)
+            {
+                Panel item = CreateVideoItem(video.FilePath, video.Thumbnail);
+                flowLayoutPanel1.Controls.Add(item);
+            }
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
