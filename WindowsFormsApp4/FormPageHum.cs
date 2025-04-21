@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics; // Tambahkan paling atas
-
+using System.Drawing;
 
 namespace WindowsFormsApp4
 {
@@ -206,6 +206,24 @@ namespace WindowsFormsApp4
             return panel;
         }
 
+        private void ApplyTheme()
+        {
+            this.BackColor = ThemeManager.GetBackgroundColor();
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Label || ctrl is Button)
+                {
+                    ctrl.ForeColor = ThemeManager.GetTextColor();
+                    ctrl.BackColor = ThemeManager.GetButtonColor();
+                }
+                else if (ctrl is Panel || ctrl is FlowLayoutPanel)
+                {
+                    ctrl.BackColor = ThemeManager.GetBackgroundColor();
+                }
+            }
+        }
+
         private void RenderOpenedVideos()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -221,5 +239,10 @@ namespace WindowsFormsApp4
         {
 
         }
+        private void Form_Load(object sender, EventArgs e)
+{
+    AppTheme.ApplyTheme(this);
+}
+
     }
 }

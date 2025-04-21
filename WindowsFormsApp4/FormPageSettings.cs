@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp4; // hanya jika AppTheme ada di namespace yang sama
+
 
 namespace WindowsFormsApp4
 {
@@ -97,7 +99,7 @@ namespace WindowsFormsApp4
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             // Membuat instance dari form Playlist
-            FormPagePlaylists playlistForm = new FormPagePlaylists();
+            FormPagePlaylists playlistForm = new FormPagePlaylistAs();
             // Menampilkan form Playlist
             playlistForm.Show();
             // Menyembunyikan form saat ini (opsional)
@@ -119,10 +121,12 @@ namespace WindowsFormsApp4
 
         private void btnLightMode_CheckedChanged(object sender, EventArgs e)
         {
-            if (btnLightMode.Checked && !isDarkMode)
-            {
-                ToggleDarkMode(); // Switch to dark mode
-            }
+            // Ganti mode
+            ThemeManager.CurrentMode = ThemeManager.CurrentMode == ThemeManager.Mode.Dark
+                ? ThemeManager.Mode.Light
+                : ThemeManager.Mode.Dark;
+
+
         }
 
         // Add this new method for dark mode toggle

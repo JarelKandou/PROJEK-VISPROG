@@ -41,6 +41,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.treeViewPlaylist = new System.Windows.Forms.TreeView();
+            this.btnAddFiles = new Guna.UI2.WinForms.Guna2Button();
+            this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -178,12 +181,39 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "No videos added yet. Create your own playlist now!";
             // 
+            // treeViewPlaylist
+            // 
+            this.treeViewPlaylist.Location = new System.Drawing.Point(271, 79);
+            this.treeViewPlaylist.Name = "treeViewPlaylist";
+            this.treeViewPlaylist.Size = new System.Drawing.Size(127, 83);
+            this.treeViewPlaylist.TabIndex = 5;
+            // 
+            // btnAddFiles
+            // 
+            this.btnAddFiles.Animated = true;
+            this.btnAddFiles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFiles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFiles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddFiles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddFiles.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAddFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddFiles.ForeColor = System.Drawing.Color.White;
+            this.btnAddFiles.IndicateFocus = true;
+            this.btnAddFiles.Location = new System.Drawing.Point(855, 22);
+            this.btnAddFiles.Name = "btnAddFiles";
+            this.btnAddFiles.Size = new System.Drawing.Size(125, 32);
+            this.btnAddFiles.TabIndex = 7;
+            this.btnAddFiles.Text = "Open File(s)";
+            this.btnAddFiles.Click += new System.EventHandler(this.btnAddFiles_Click_1);
+            // 
             // FormPagePlaylists
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1021, 450);
+            this.Controls.Add(this.btnAddFiles);
+            this.Controls.Add(this.treeViewPlaylist);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelHome);
             this.Controls.Add(this.panelSidebar);
@@ -212,6 +242,9 @@
         private System.Windows.Forms.Label Judol;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TreeView treeViewPlaylist;
+        private Guna.UI2.WinForms.Guna2Button btnAddFiles;
+        private System.Windows.Forms.SaveFileDialog SaveFileDialog;
     }
 }
 
