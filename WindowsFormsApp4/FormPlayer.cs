@@ -16,7 +16,6 @@ namespace WindowsFormsApp4
         private string currentVideoPath;
         private double lastPosition = 0;
 
-        private string videoPath;
 
         public FormPlayer(string videoPath)
         {
